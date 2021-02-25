@@ -1,30 +1,26 @@
-"strict"
+"use strict";
 
 
 function reply_click()
 {
-    console.log(window.event.target.id)
+     let userChoice ="";
 
 switch(window.event.target.id){
-
-    case "ImageButton1":
-    var userChoice ="blad";
+    case"ImageButton1":userChoice="blad";
     break;
-    case "ImageButton2":
-    var userChoice ="steen";
+    case"ImageButton2":userChoice="steen";
     break;
-    case "ImageButton3":
-    var userChoice ="schaar";    
+    case"ImageButton3":userChoice="schaar";    
     break;
 }
 
 
 console.log("userchoice="+userChoice);
 
-document.getElementById('kiest').innerHTML = "Computer kiest:";
+document.getElementById("kiest").innerHTML = "Computer kiest:";
 
 // Computer choice
-var computerChoice = Math.random();
+let computerChoice = Math.random();
 if (computerChoice < 0.34) {
     computerChoice = "steen";
 } else if(computerChoice <= 0.67) {
@@ -34,31 +30,33 @@ if (computerChoice < 0.34) {
 }
 
 console.log("computerchoice="+computerChoice);
-
+let img = "";
+let src= "";
 
 // Display computer choice
   switch(computerChoice) {
         case "blad":
-            var img = document.createElement("img");
+             img = document.createElement("img");
             img.src = "blad.png";
-            var src = document.getElementById("result");
+             src = document.getElementById("result");
+            console.log("result"+src.valueOf);
             src.append(img);
           break;
           case "steen":
-            var img = document.createElement("img");
+            img = document.createElement("img");
             img.src = "steen.png";
-            var src = document.getElementById("result");
+            src = document.getElementById("result");
+            console.log("result"+src);
             src.append(img);
           break;
           case "schaar":
-            var img = document.createElement("img");
+             img = document.createElement("img");
             img.src = "schaar.png";
-            var src = document.getElementById("result");
+             src = document.getElementById("result");
+             console.log("result"+src);
             src.append(img);
           break;
-    }
-
-   
+    }  
 // Compare user choice vs computer choice
 function Compare(choice1,choice2){
     if (choice1 === choice2) {
@@ -91,10 +89,10 @@ function Compare(choice1,choice2){
             return "Jij wint !";
         }
     }
-};
+}
 
-var WinLose = Compare(userChoice,computerChoice); 
-document.getElementById('winLose').innerHTML = WinLose;  //text
+let WinLose=Compare(userChoice,computerChoice); 
+document.getElementById('winLose').innerHTML=WinLose;  
         
 
 }
