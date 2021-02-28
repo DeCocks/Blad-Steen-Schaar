@@ -30,31 +30,18 @@ if (computerChoice < 0.34) {
 }
 
 console.log("computerchoice="+computerChoice);
-let img = "";
-let src= "";
+
 
 // Display computer choice
   switch(computerChoice) {
         case "blad":
-             img = document.createElement("img");
-            img.src = "blad.png";
-             src = document.getElementById("result");
-            console.log("result"+src.valueOf);
-            src.append(img);
-          break;
+              document.getElementById("result").innerHTML = '<img src="blad.png" />';
+             break;
           case "steen":
-            img = document.createElement("img");
-            img.src = "steen.png";
-            src = document.getElementById("result");
-            console.log("result"+src);
-            src.append(img);
+            document.getElementById("result").innerHTML = '<img src="steen.png" />';
           break;
           case "schaar":
-             img = document.createElement("img");
-            img.src = "schaar.png";
-             src = document.getElementById("result");
-             console.log("result"+src);
-            src.append(img);
+            document.getElementById("result").innerHTML = '<img src="schaar.png" />';
           break;
     }  
 // Compare user choice vs computer choice
